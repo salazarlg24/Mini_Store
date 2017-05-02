@@ -1,0 +1,36 @@
+<div ng-controller="ProductsController" >
+
+	<div style="width: 170px; margin-left: 50px; display: inline-block;">
+
+			<input type="text" placeholder="search..." ng-model="filter_name">
+
+		<h3>Add a new product</h3>
+		<hr>
+		<form>
+			<p>Name:</p>
+			<input type="text" ng-model="newProduct.name">
+			<p>Image(url)</p>
+			<input type="text" ng-model='newProduct.image'>
+			<p>Description</p>
+			<input type="text" ng-model="newProduct.text">
+			<p>Initial Quantity:</p>
+			<input type="number" ng-model="newProduct.qty" min="1">
+			<button ng-click="create()">Create</button>
+		</form>
+	</div>
+
+	<div ng-repeat="item in product | filter: filter_name" ng-if="item.qty > 0" style="display: inline-block; vertical-align: top;">
+		<div style="width: 200px; text-align: center; display: inline-block; border: 1px solid black">
+			<p><img src="{{item.image}}" style="width: 150px; height: 150px;"></p>
+			<p>{{item.name}}</p>
+			<p>({{item.qty}} left)</p>
+		</div>
+		
+	</div>
+
+
+
+
+
+
+</div>

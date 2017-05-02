@@ -1,0 +1,34 @@
+<h2>Dashboard...</h2>
+<div ng-controller="DashboardController">
+	
+	<div style="width: 170px; margin-left: 50px; display: inline-block; vertical-align: top">
+		<input type="text" placeholder="search...">
+	</div>
+
+	<div style="width: 1000px; display: inline-block;">
+		<div ng-repeat="item in product | limitTo: -3 | orderBy: 'time':true"" ng-if="item.qty > 0" style="display: inline-block; vertical-align: top;">
+			<div style="width: 200px; text-align: center; display: inline-block; border: 1px solid black">
+				<p><img src="{{item.image}}" style="width: 150px; height: 150px;"></p>
+				<p>{{item.name}}</p>
+				<p>({{item.qty}} left)</p>
+			</div>
+		</div>
+		<p><a href="#!/products">Show More Products</a></p>
+
+		<h3>Recent Orders</h3>
+		<div style="display: inline-block; vertical-align: top; text-align: left; width: 500px;">
+			<div ng-repeat="item in order | limitTo: -3 | orderBy: 'time':true" ng-if="item.qty > 0" >
+			<p >{{item.name}} purchased {{item.qty}} {{item.product}}... ({{item.createdAt | date}})</p>
+			</div>
+			<a href="#!/orders">Show More Orders</a>
+		</div>
+
+		<h3>New Customers</h3>
+		<div style="display: inline-block; vertical-align: top; text-align: left; width: 500px;">
+			<p ng-repeat="item in user | limitTo: -3 | orderBy: 'time':true"">{{item.name}} joined the store. ({{item.createdAt | date}})</p>
+			<a href="#!/customers">Show More Customers</a> 
+		</div>
+
+	</div>
+
+</div>

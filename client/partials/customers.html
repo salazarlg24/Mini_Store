@@ -1,0 +1,29 @@
+<h2>Customers...</h2>
+<br>
+
+<div style="margin-left: 100px;" ng-controller="UsersController">
+	<h3>Add a new customer</h3>
+
+		<div ng-repeat="item in message">
+			<h2 style="color: red">{{item}}</h2>
+		</div>
+	<form>
+		<p>Customer Name:  <input type="text" ng-model="newCustomer.name"><button ng-click="create()">Add</button></p>
+	</form>
+	<br>
+	<input type="text" placeholder="search name.." ng-model="filter_name">
+	<table style="border: 2px solid black; width: 500px; text-align: left;">
+		<tr>
+			<th>Customer Name</th>
+			<th>Created Date</th>
+			<th>Actions</th>
+		</tr>
+
+<!-- 		<tr ng-repeat="item in user | filter: filter_name">
+ -->		<tr ng-repeat="item in user | filter: filter_name">
+			<td>{{item.name}}</td>
+			<td>{{item.createdAt | date}}</td>
+			<td><button ng-click="delete(item._id)">Remove</button></td>
+		</tr>
+	</table>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+<head>
+	<meta charset="utf-8">
+	<title>Homepage</title>
+	<script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script src="angular-cookies/angular-cookies.js"></script>
+    <script src="assets/app.js"></script>
+    <script src="assets/factories/UsersFactory.js"></script>
+    <script src="assets/factories/ProductsFactory.js"></script>
+    <script src="assets/factories/OrdersFactory.js"></script>
+    <script src="assets/controllers/UsersController.js"></script>
+    <script src="assets/controllers/ProductsController.js"></script>
+    <script src="assets/controllers/OrdersController.js"></script>
+    <script src="assets/controllers/DashboardController.js"></script>
+</head>
+<body>
+    <a href="/">Dashboard</a> | 
+    <a href="#!/products">Products</a> | 
+    <a href="#!/orders">Orders</a> |
+    <a href="#!/customers">Customers</a> | 
+	<div ng-view>
+	</div>
+
+</body>
+</html>
